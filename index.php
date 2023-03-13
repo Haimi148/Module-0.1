@@ -2,9 +2,14 @@
 <html>
   <head>
     <title>Ti-84 Plus Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
   <body>
+
+  <div style="display: flex; justify-content: center; "><h1>Calculator</h1></div>
+
     <div class="calculator">
       <div class="screen">
         <div class="expression"></div>
@@ -42,29 +47,42 @@
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <div style="display: flex; justify-content: center; "><h1>Do more math operation down below.</h1></div>
     <!-- function to check if the submit button has been pressed. If it has, we retrieve the values of num1 and num2 from the form using the $_POST superglobal variable.  -->
-    <div class="screen">
-  <form method="post">
-    <input type="text" name="num1" placeholder="0">
-    <input type="text" name="num2" placeholder="0">
-    <span class="result"><?php if(isset($result)){echo $result;} else{echo "0";} ?></span>
-    <span class="sqrt"><?php if(isset($sqrt)){echo $sqrt;} else{echo "0";} ?></span>
-    <button type="submit" name="submit" value="submit">=</button>
-    <button type="submit" name="sqrt" value="sqrt">sqrt</button>
-  </form>
-</div>
+    <form action="function.php" method="get">
+    <input type="text" name="num01" placeholder="Number 1">
+    <select name="oper">
+        <label>Choose operation:</label>
+        <option value="add">Add</option>
+        <option value="sub">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+        <option value="sqrt">Square root</option>
+        <option value="pow">Power</option>
+        <option value="sin">Sine</option>
+        <option value="cos">Cosine</option>
+        <option value="tan">Tangent</option>
+        <option value="asin">Arcsine</option>
+        <option value="acos">Arccosine</option>
+        <option value="atan">Arctangent</option>
+        <option value="log">Logarithm</option>
+        <option value="ln">Natural logarithm</option>
+        <option value="abs">Absolute value</option>
+        <option value="floor">Floor</option>
+        <option value="ceil">Ceiling</option>
+    </select>
+    <input type="text" name="num02" placeholder="Number 2">
+    <button type="submit">Calculate</button>
+</form>
+
+<br>
+<br>
+<br>
 
 
 
-   
-<?php
-if(isset($_POST['submit'])){
-  $num1 = $_POST['num1'];
-  $num2 = $_POST['num2'];
-  $result = $num1 + $num2;
-  $sqrt = isset($_POST['sqrt']) ? sqrt($num1) : 0;
-}
-?>
 
 
     <script src="script.js"></script>
