@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "moviesearch-z",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
