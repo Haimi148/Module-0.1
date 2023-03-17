@@ -1,43 +1,86 @@
-<?php 
+<?php
+
+define('CALCULATOR_VERSION', '1.0');
+
+
+include'index.html';
+
 function myCalculator($num01, $oper, $num02) {
+    $result = 0;
+    $calculation = "";
     switch ($oper) {
         case "add":
-            return $num01 + $num02;
+            $result = $num01 + $num02;
+            $calculation = "$num01 + $num02";
+            break;
         case "sub":
-            return $num01 - $num02;
+            $result = $num01 - $num02;
+            $calculation = "$num01 - $num02";
+            break;
         case "multiply":
-            return $num01 * $num02;
+            $result = $num01 * $num02;
+            $calculation = "$num01 * $num02";
+            break;
         case "divide":
-            return $num01 / $num02;
+            $result = $num01 / $num02;
+            $calculation = "$num01 / $num02";
+            break;
         case "sqrt":
-            return sqrt($num01);
+            $result = sqrt($num01);
+            $calculation = "√$num01";
+            break;
         case "pow":
-            return pow($num01, $num02);
+            $result = pow($num01, $num02);
+            $calculation = "$num01^$num02";
+            break;
         case "sin":
-            return sin($num01);
+            $result = sin($num01);
+            $calculation = "sin($num01)";
+            break;
         case "cos":
-            return cos($num01);
+            $result = cos($num01);
+            $calculation = "cos($num01)";
+            break;
         case "tan":
-            return tan($num01);
+            $result = tan($num01);
+            $calculation = "tan($num01)";
+            break;
         case "asin":
-            return asin($num01);
+            $result = asin($num01);
+            $calculation = "asin($num01)";
+            break;
         case "acos":
-            return acos($num01);
+            $result = acos($num01);
+            $calculation = "acos($num01)";
+            break;
         case "atan":
-            return atan($num01);
+            $result = atan($num01);
+            $calculation = "atan($num01)";
+            break;
         case "log":
-            return log10($num01);
+            $result = log10($num01);
+            $calculation = "log($num01)";
+            break;
         case "ln":
-            return log($num01);
+            $result = log($num01);
+            $calculation = "ln($num01)";
+            break;
         case "abs":
-            return abs($num01);
+            $result = abs($num01);
+            $calculation = "|$num01|";
+            break;
         case "floor":
-            return floor($num01);
+            $result = floor($num01);
+            $calculation = "floor($num01)";
+            break;
         case "ceil":
-            return ceil($num01);
+            $result = ceil($num01);
+            $calculation = "ceil($num01)";
+            break;
         default:
             return "There was an error!";
     }
+    return $result . " (" . $calculation . ")";
 }
 
 
@@ -45,5 +88,7 @@ $num01 = $_GET["num01"];
 $oper = $_GET["oper"];
 $num02 = $_GET["num02"];
 
-echo "Value: " . myCalculator($num01, $oper, $num02);
+echo "Result: " . myCalculator($num01, $oper, $num02);
+
+
 ?>

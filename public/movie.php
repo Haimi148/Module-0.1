@@ -1,17 +1,31 @@
 <?php
+// Connect to the database
+$db = new mysqli("localhost", "username", "password", "database_name");
 
-$api_key = "b157839cedcf76902d42a11142afc645";
-$api_url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key={$api_key}";
+// Check for errors
+if ($db->connect_errno) {
+  echo "Failed to connect to database: " . $db->connect_error;
+  exit();
+}
 
-<?php
+// Fetch the movies from the database
+// $query = "SELECT * FROM movies ORDER BY release_date DESC";
+// $result = $db->query($query);
 
-$api_key = "b157839cedcf76902d42a11142afc645";
-$api_url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key={$api_key}";
+// // Display the movies in a grid of cards
+// if ($result->num_rows > 0) {
+//   while ($row = $result->fetch_assoc()) {
+//     echo '<div class="movie-card">';
+//     echo '<img src="' . $row["poster"] . '" alt="' . $row["title"] . '">';
+//     echo '<h3>' . $row["title"] . '</h3>';
+//     echo '<p>' . $row["genre"] . '</p>';
+//     echo '<p>' . $row["release_date"] . '</p>';
+//     echo '</div>';
+//   }
+// } else {
+//   echo "No movies found.";
+// }
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $api_url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
-
-$movies = json_decode($response, true);
+// Close the database connection
+// $db->close();
+// ?>

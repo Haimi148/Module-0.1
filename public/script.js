@@ -64,3 +64,5 @@ document.querySelectorAll(".key").forEach(function (button) {
 });
 
 updateScreen();
+
+

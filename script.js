@@ -64,3 +64,14 @@ document.querySelectorAll(".key").forEach(function (button) {
 });
 
 updateScreen();
+
+// //write two var and if statement with else
+// var a = 0;
+// var b = 0;
+// if (a == b) {
+//   document.querySelector("#result").innerHTML = "a = b";
+//   } else {
+//     document.querySelector("#result").innerHTML = "a < b";
+//     }
+
+
