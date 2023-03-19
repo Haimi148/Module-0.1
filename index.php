@@ -11,9 +11,56 @@
 <body>
 
   <div style="display: flex; justify-content: center; ">
-    <h1>Calculator</h1>
-  </div>
-  
+    <h1>
+
+    <?php 
+    // Make a function to show custom message
+       
+// $dayNameOfTheWeek = date('l');
+// $mondayString = "boring";
+// $tuesdayString = "thanks";
+// $wednesdayString = "ln";
+// $thursdayString = "pi";
+// $fridayString = "it is Fun";
+
+// //fullstring
+// $fullString = "Hello, Humans";
+
+// if ($dayNameOfTheWeek == "Monday") {
+//   $fullString = $fullString . " " . $mondayString . " " . $dayNameOfTheWeek;
+// } else if ($dayNameOfTheWeek == "Friday") {
+//   $fullString = $fullString . " " . $fridayString. " " . $dayNameOfTheWeek;
+// } else if ($dayNameOfTheWeek == "Sunday") {
+//   $fullString = "Hello it's weekend";
+// }
+
+function show_message($customMes) {
+  $fullString = "Hello, Humans";
+  $dayNameOfTheWeek = date('l');
+
+// $luckynumber = [1, 2, 5, 7, 9, 10]
+
+// $luckynumberAdvanced = [ "Fun game" =. 7, "Luck Number" => 7 ];
+
+  if ($dayNameOfTheWeek   == "Monday") {
+      $fullString = $fullString . " " . $customMes . " " . $dayNameOfTheWeek;
+    } else if ($dayNameOfTheWeek == "Friday") {
+      $fullString = $fullString . " " . $customMes. " " . $dayNameOfTheWeek;
+    } else if ($dayNameOfTheWeek == "Sunday") {
+      $fullString = "Hello it's weekend";
+    } else {
+      $fullString = "Hello, Humans";
+    }
+    return $fullString;
+
+  }   
+
+echo show_message("its fun"); 
+?>
+
+
+
+
   
 
   <div class="calculator">
@@ -85,12 +132,33 @@
     <button type="submit">Calculate</button>
   </form>
 
+  
+
 
 
 
   <br>
   <br>
   <br>
+  <div class="container">
+  <?php
+    for($i=1;$i<=10;$i++){
+      echo "<table class='table' id='table$i'>";
+      echo "<caption>Multiplication Table of ".$i."</caption>";
+      for($j=1;$j<=10;$j++){
+        echo "<tr>";
+        echo "<td class='header'>" . $i . " X " . $j . "</td>";
+        echo "<td>" . $i*$j . "</td>";
+        echo "</tr>";
+      }
+      echo "</table>";
+      echo "<button class='show-btn' data-table='table$i'>Show Table $i</button>";
+    }
+  ?>
+</div>
+
+
+<script src="script.js"></script>
 
 
 
@@ -98,27 +166,27 @@
 
   <script src="script.js">
 
-    function connect() {
-      // Create a new XMLHttpRequest object
-      const xhr = new XMLHttpRequest();
+    // function connect() {
+    //   // Create a new XMLHttpRequest object
+    //   const xhr = new XMLHttpRequest();
 
-      // Set the HTTP method and URL for the request
-      xhr.open('GET', 'function.php');
+    //   // Set the HTTP method and URL for the request
+    //   xhr.open('GET', 'function.php');
 
-      // Set a callback function to handle the response
-      xhr.onreadystatechange = function () {
-        // Check if the request is complete and successful
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-          // Extract the response data
-          const response = xhr.responseText;
-          // Do something with the response data
-          console.log(response);
-        }
-      };
+    //   // Set a callback function to handle the response
+    //   xhr.onreadystatechange = function () {
+    //     // Check if the request is complete and successful
+    //     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    //       // Extract the response data
+    //       const response = xhr.responseText;
+    //       // Do something with the response data
+    //       console.log(response);
+    //     }
+    //   };
 
-      // Send the request
-      xhr.send();
-    }
+    //   // Send the request
+    //   xhr.send();
+    // }
 
 
 
@@ -145,6 +213,10 @@
     const analytics = getAnalytics(app);
 
   </script>
+
+  
 </body>
+
+
 
 </html>

@@ -2,8 +2,19 @@
 
 define('CALCULATOR_VERSION', '1.0');
 
+$multiDimArray = array(
+    array(1, 2, 3),
+    array("apple", "banana", "orange", "Grape", "Cherry"),
+    array(true, false, true)
+);
 
-include'index.html';
+// make a for loop
+for ($i = 0; $i < 3; $i++) {
+    echo $multiDimArray[$i][0];
+    }
+
+
+include'index.php';
 
 function myCalculator($num01, $oper, $num02) {
     $result = 0;

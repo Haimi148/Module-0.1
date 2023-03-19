@@ -75,3 +75,23 @@ updateScreen();
 //     }
 
 
+var showButtons = document.querySelectorAll(".show-btn");
+
+showButtons.forEach(function(button) {
+  var table = document.getElementById(button.dataset.table);
+  var isOpen = false;
+  
+  table.style.display = "none";
+  
+  button.addEventListener("click", function() {
+    isOpen = !isOpen;
+    
+    if (isOpen) {
+      table.style.display = "table";
+      button.textContent = "Hide Table " + button.dataset.table.slice(-1);
+    } else {
+      table.style.display = "none";
+      button.textContent = "Show Table " + button.dataset.table.slice(-1);
+    }
+  });
+});
