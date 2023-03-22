@@ -14,25 +14,7 @@
     <h1>
 
     <?php 
-    // Make a function to show custom message
-       
-// $dayNameOfTheWeek = date('l');
-// $mondayString = "boring";
-// $tuesdayString = "thanks";
-// $wednesdayString = "ln";
-// $thursdayString = "pi";
-// $fridayString = "it is Fun";
-
-// //fullstring
-// $fullString = "Hello, Humans";
-
-// if ($dayNameOfTheWeek == "Monday") {
-//   $fullString = $fullString . " " . $mondayString . " " . $dayNameOfTheWeek;
-// } else if ($dayNameOfTheWeek == "Friday") {
-//   $fullString = $fullString . " " . $fridayString. " " . $dayNameOfTheWeek;
-// } else if ($dayNameOfTheWeek == "Sunday") {
-//   $fullString = "Hello it's weekend";
-// }
+    
 
 function show_message($customMes) {
   $fullString = "Hello, Humans";
@@ -57,6 +39,27 @@ function show_message($customMes) {
 
 echo show_message("its fun"); 
 ?>
+
+
+<?php 
+    $num = 1;
+
+    while ($num <= 10) {
+        echo $num . " ";
+        $num++;
+    }
+    
+    // Array of background colors
+$background_colors = array("#FF5733", "#C70039", "#900C3F", "#581845", "#FFC300", "#DAF7A6", "#00BFFF", "#9966CC");
+
+// Choose a random color from the array
+$random_color = $background_colors[array_rand($background_colors)];
+
+// Output the background color using inline CSS
+echo "<body style='background-color: $random_color'>";
+
+
+    ?>
 
 
 
@@ -104,6 +107,7 @@ echo show_message("its fun");
   <br>
   <div style="display: flex; justify-content: center; ">
     <h1>Do more math operation down below.</h1>
+   
   </div>
   <!-- function to check if the submit button has been pressed. If it has, we retrieve the values of num1 and num2 from the form using the $_POST superglobal variable.  -->
   <form action="function.php" method="get">
@@ -142,19 +146,37 @@ echo show_message("its fun");
   <br>
   <div class="container">
   <?php
-    for($i=1;$i<=10;$i++){
-      echo "<table class='table' id='table$i'>";
-      echo "<caption>Multiplication Table of ".$i."</caption>";
-      for($j=1;$j<=10;$j++){
-        echo "<tr>";
-        echo "<td class='header'>" . $i . " X " . $j . "</td>";
-        echo "<td>" . $i*$j . "</td>";
-        echo "</tr>";
-      }
-      echo "</table>";
-      echo "<button class='show-btn' data-table='table$i'>Show Table $i</button>";
+  // Outer loop to generate multiplication tables from 1 to 10
+  for($i=1;$i<=10;$i++){
+    
+    // Output HTML table with a unique ID for each table
+    echo "<table class='table' id='table$i'>";
+    
+    // Output table caption with the multiplication table number
+    echo "<caption>Multiplication Table of ".$i."</caption>";
+    
+    // Inner loop to generate rows and columns of multiplication table
+    for($j=1;$j<=10;$j++){  
+      
+      // Output a table row with two cells containing the factors and product
+      echo "<tr>";
+      echo "<td class='header'>" . $i . " X " . $j . "</td>";
+      echo "<td>" . $i*$j . "</td>";
+      echo "</tr>";
+      
     }
-  ?>
+    
+    // Close the table HTML tag
+    echo "</table>";
+    
+    // Output a button to show/hide the table, with a data attribute set to the table ID
+    echo "<button class='show-btn' data-table='table$i'>Show Table $i</button>";
+    
+  }
+?>
+
+
+
 </div>
 
 

@@ -2,16 +2,17 @@
 
 define('CALCULATOR_VERSION', '1.0');
 
-$multiDimArray = array(
-    array(1, 2, 3),
-    array("apple", "banana", "orange", "Grape", "Cherry"),
-    array(true, false, true)
-);
+//Make Multi-dimensinal array that keeps the history of the calculation
+$history = [
+    1 => "1 + 1 = 2",
+    2 => "    ||||    ",
+    3 => "2 * 4 = 8"
+];
 
-// make a for loop
-for ($i = 0; $i < 3; $i++) {
-    echo $multiDimArray[$i][0];
-    }
+// Accessing and printing elements
+echo $history[1]; // Output: "1 + 1 = 2"
+echo $history[2]; // Output: "2 * 4 = 8"
+echo $history[3];
 
 
 include'index.php';
@@ -102,4 +103,7 @@ $num02 = $_GET["num02"];
 echo "Result: " . myCalculator($num01, $oper, $num02);
 
 
+
 ?>
+
+
