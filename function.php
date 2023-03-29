@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 define('CALCULATOR_VERSION', '1.0');
 
 //Make Multi-dimensinal array that keeps the history of the calculation
@@ -13,6 +16,8 @@ $history = [
 echo $history[1]; // Output: "1 + 1 = 2"
 echo $history[2]; // Output: "2 * 4 = 8"
 echo $history[3];
+
+
 
 
 include'index.php';

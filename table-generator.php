@@ -27,6 +27,8 @@ for ($i = 1; $i <= $rows; $i++) {
 echo '</table>';
 ?>
 
+
+
 <div class="popup">
     <table></table>
     <div class="close">X</div>

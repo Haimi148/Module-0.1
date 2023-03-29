@@ -1,5 +1,5 @@
 let expression = "";
-let result = "";
+let result = "a";
 
 function updateScreen() {
   document.querySelector(".expression").innerHTML = expression;

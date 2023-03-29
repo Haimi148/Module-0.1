@@ -3,7 +3,7 @@
 
 <head>
   <title>MathHive Calculator</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -14,6 +14,7 @@
     <h1>
 
     <?php 
+    
     
 
 function show_message($customMes) {
@@ -39,6 +40,25 @@ function show_message($customMes) {
 
 echo show_message("its fun"); 
 ?>
+
+<?php
+$cars = array (
+  array("Addition","+","+"),
+  array("Substraction","-","-"),
+  array("Mulitplication","*","*"),
+  array("Divide","/","/")
+);
+    
+for ($row = 0; $row < 4; $row++) {
+  echo "<p><b>Row number $row</b></p>";
+  echo "<ul>";
+  for ($col = 0; $col < 3; $col++) {
+    echo "<li>".$cars[$row][$col]."</li>";
+  }
+  echo "</ul>";
+}
+?>
+
 
 
 <?php 
@@ -177,16 +197,19 @@ echo "<body style='background-color: $random_color'>";
 
 
 
+
+
+
 </div>
 
 
-<script src="script.js"></script>
+<script src="JS-Code/script.js"></script>
 
 
 
 
 
-  <script src="script.js">
+  <script src="JS-Code/script.js">
 
     // function connect() {
     //   // Create a new XMLHttpRequest object
